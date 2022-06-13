@@ -1,5 +1,5 @@
 # mine_interact
-https://github.com/AWeirdScratcher/mi_interact的代替品
+https://github.com/AWeirdScratcher/mi_interact 的代替品
 
 ## example
 ```py
