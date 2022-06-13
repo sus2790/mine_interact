@@ -34,3 +34,7 @@ async def on_ready():
 
 
 ```
+## install
+```sh
+pip install git+https://github.com/cutebear0123/mine_interact.git
+```
