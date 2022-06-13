@@ -1,7 +1,7 @@
 # mine_interact
 https://github.com/AWeirdScratcher/mi_interact的代替品
 
-##example
+## example
 ```py
 import discord
 from discord.ext import commands
