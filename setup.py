@@ -6,6 +6,6 @@ setup(
     packages=["mine_interact"],
     license="MIT license",
     long_description="用於 MineBot 交互的 Package",
-    author="cutbear",
+    author="cutebear",
     author_email="cutebear@bear-team.dev",
 )
