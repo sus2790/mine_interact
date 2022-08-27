@@ -8,14 +8,12 @@ from discord.ext import commands
 
 from mine_interact import Mine
 
-bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
+bot = commands.Bot(command_prefix=commands.when_mentioned_or("!"), intents=discord.Intents.all())
 
 
 @bot.event
 async def on_ready():
-    print("Logged in as")
-    print(bot.user.name)
-    print(bot.user.id)
+    print(f"Logged in as {bot.user} (ID: {bot.user.id})")
     print("------")
     mine = Mine(bot, channel_id)
     user = bot.get_user(user_id)
@@ -35,6 +33,6 @@ async def on_ready():
 
 ```
 ## install
-```shell
+```sh
 pip install git+https://github.com/cutebear0123/mine_interact.git
 ```
