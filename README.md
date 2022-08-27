@@ -17,7 +17,7 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print("------")
-    mine = Mine(bot, channel_ud)
+    mine = Mine(bot, channel_id)
     user = bot.get_user(user_id)
     d = await mine.get_user_data(user)
     print(d.id)
