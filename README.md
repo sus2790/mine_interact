@@ -1,6 +1,6 @@
-# mine_interact
-https://github.com/AWeirdScratcher/mi_interact 的代替品\n
+# Mine Interact Package
 https://github.com/cutebear0123/mine_interact 的備份 + 重寫
+[![好心的星星](https://img.shields.io/github/issues/microsoft/vscode/feature-request.svg)](https://github.com/microsoft/vscode/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areactions-%2B1-desc)
 
 ## example
 ```py
