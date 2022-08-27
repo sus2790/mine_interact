@@ -1,5 +1,5 @@
 # mine_interact
-https://github.com/AWeirdScratcher/mi_interact 的代替品
+https://github.com/AWeirdScratcher/mi_interact 的代替品\n
 https://github.com/cutebear0123/mine_interact 的備份 + 重寫
 
 ## example
