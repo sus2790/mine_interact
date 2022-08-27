@@ -13,10 +13,8 @@ bot = commands.Bot(commands.when_mentioned_or("!"), intents=discord.Intents.all(
 
 @bot.event
 async def on_ready():
-    print("Logged in as")
-    print(bot.user.name)
-    print(bot.user.id)
-    print("------")
+    print(f'Logged in as {bot.user} (ID: {bot.user.id})')
+    print('------')
     mine = Mine(bot, channel_id)
     user = bot.get_user(user_id)
     d = await mine.get_user_data(user)
