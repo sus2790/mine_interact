@@ -5,12 +5,9 @@
 
 version: 1.0.0
 updates:
-  - package-ecosystem: "asyncio" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  # Enable version updates for npm
+  - package-ecosystem: "asyncio"
+    # Look for `package.json` and `lock` files in the `root` directory
+    directory: "/"
+    # Check the npm registry for updates every day (weekdays)
     schedule:
-      interval: "daily"
-  - package-ecosystem: "typing" # See documentation for possible values
-    directory: "/" # Location of package manifests
-    schedule:
-      interval: "daily"
-
