@@ -3,17 +3,19 @@ https://github.com/AWeirdScratcher/mi_interact 的代替品
 
 ## example
 ```py
+
 import discord
 from discord.ext import commands
 
 from mine_interact import Mine
 
-bot = commands.Bot(command_prefix=commands.when_mentioned_or("!"), intents=discord.Intents.all())
-
+bot = commands.Bot(commands.when_mentioned_or("!"), intents=discord.Intents.all())
 
 @bot.event
 async def on_ready():
-    print(f"Logged in as {bot.user} (ID: {bot.user.id})")
+    print("Logged in as")
+    print(bot.user.name)
+    print(bot.user.id)
     print("------")
     mine = Mine(bot, channel_id)
     user = bot.get_user(user_id)
@@ -30,6 +32,7 @@ async def on_ready():
     print(d.mystery_stone)
     print(d.skill)
 
+bot.run('your token')
 
 ```
 ## install
