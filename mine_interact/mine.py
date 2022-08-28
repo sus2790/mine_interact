@@ -26,7 +26,8 @@ class Mine:
         return m.author.id == bot_id and m.channel == self._channel
 
     async def get_user_data(self, user: discord.User) -> User:
-
+        if user is None:
+          return UserNotFound(f'user {user.id} does not exist')
         await self._channel.send(f'MI.get_user_data {user.id} {self._session}')
         try:
             res = await self._client.wait_for('message', check=self._check_message, timeout=15)  
