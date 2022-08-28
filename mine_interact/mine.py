@@ -3,7 +3,7 @@ import asyncio
 import discord
 from secrets import token_hex
 from .data import User
-from .errors import ChannelNotFound, APIError, APITimeout
+from .errors import ChannelNotFound, UserNotFound, APIError, APITimeout
 
 __all__ = (
     'Mine',
@@ -12,7 +12,7 @@ __all__ = (
 bot_id = 955828209860112395
 
 class Mine:
-    async def __init__(
+    def __init__(
         self, client, channel_id: Optional[int]
     ) -> None:
         self._client = client
@@ -22,7 +22,7 @@ class Mine:
         if self._channel is None:
             raise ChannelNotFound(f'channel {channel_id} does not exist')
 
-    async def _check_message(self, m):
+    def _check_message(self, m):
         return m.author.id == bot_id and m.channel == self._channel
 
     async def get_user_data(self, user: discord.User) -> User:
