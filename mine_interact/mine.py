@@ -33,6 +33,9 @@ class Mine:
         except asyncio.TimeoutError:
             raise APITimeout('Mine Bot did not respond')
         if not res.content.startswith('MI.user_data'):
+          if not res.content:
+            return None
+          else:
             raise APIError(res.content)
         raw_data = res.content[13:]
         if raw_data == 'none':
