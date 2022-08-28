@@ -3,7 +3,7 @@ import asyncio
 import discord
 from secrets import token_hex
 from .data import User
-from .errors import ChannelNotFound, UserNotFound, APIError, APITimeout
+from .errors import NotFound, APIError, APITimeout
 
 __all__ = (
     'Mine',
@@ -16,18 +16,17 @@ class Mine:
         self, client, channel_id: Optional[int]
     ) -> None:
         self._client = client
-
         self._session = token_hex()[:15]
-        self._channel = self._client.get_channel(channel_id)
+        self._channel = await self._client.fetch_channel(channel_id)
         if self._channel is None:
-            raise ChannelNotFound(f'channel {channel_id} does not exist')
+            raise NotFound('Unknown Channel')
 
     def _check_message(self, m):
         return m.author.id == bot_id and m.channel == self._channel
 
-    async def get_user_data(self, user: discord.User) -> User:
+    async def get_user_data(self, user: discord.User) -> Optional[User]:
         if user is None:
-          raise UserNotFound(f'user does not exist')
+          raise NotFound('Unknown User')
         await self._channel.send(f'MI.get_user_data {user.id} {self._session}')
         try:
             res = await self._client.wait_for('message', check=self._check_message, timeout=15)  
