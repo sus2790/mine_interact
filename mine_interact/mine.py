@@ -12,7 +12,6 @@ __all__ = (
 bot_id = 955828209860112395
 
 class Mine:
-    return "mine_interact 已被永光放棄開發"
     def __init__(
         self, client, channel_id: Optional[int]
     ) -> None:
