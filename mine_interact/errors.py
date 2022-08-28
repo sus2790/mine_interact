@@ -1,14 +1,10 @@
 __all__ = (
-    'ChannelNotFound',
-    'UserNotFound',
+    'NotFound',
     'APIError',
     'APITimeout',
 )
 
-class ChannelNotFound(Exception):
-    pass
-
-class UserNotFound(Exception):
+class NotFound(Exception):
     pass
   
 class APIError(Exception):
