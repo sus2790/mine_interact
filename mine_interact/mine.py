@@ -26,7 +26,7 @@ class Mine:
 
     async def get_user_data(self, user: discord.User) -> Optional[User]:
         if user is None:
-          raise NotFound('Unknown User')
+            raise NotFound('Unknown User')
         await self._channel.send(f'MI.get_user_data {user.id} {self._session}')
         try:
             res = await self._client.wait_for('message', check=self._check_message, timeout=15)  
