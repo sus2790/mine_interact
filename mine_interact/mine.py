@@ -24,7 +24,16 @@ class Mine:
     def _check_message(self, m):
         return m.author.id == bot_id and m.channel == self._channel
 
+    def _check_mine_bot(self):
+        mine_bot = self._get_user(bot_id)
+        if mine_bot.status != "offline":
+            pass
+        else:
+            raise APIError("Mine Bot is offline")
+        
+
     async def get_user_data(self, user: discord.User) -> Optional[User]:
+        self._check_mine_bot()
         if user is None:
             raise NotFound('Unknown User')
         await self._channel.send(f'MI.get_user_data {user.id} {self._session}')
@@ -34,7 +43,7 @@ class Mine:
             raise APITimeout('Mine Bot did not respond')
         if not res.content.startswith('MI.user_data'):
           if not res.content:
-            return None
+            return APIError('Mine Bot returned invalid data')
           else:
             raise APIError(res.content)
         raw_data = res.content[13:]
