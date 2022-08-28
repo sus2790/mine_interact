@@ -20,7 +20,7 @@ class Mine:
         self._session = token_hex()[:15]
         self._channel = self._client.get_channel(channel_id)
         if self._channel is None:
-            raise ChannelNotFound(f'Channel {channel_id} does not exist')
+            raise ChannelNotFound(f'channel {channel_id} does not exist')
 
     def _check_message(self, m):
         return m.author.id == bot_id and m.channel == self._channel
