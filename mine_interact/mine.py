@@ -17,7 +17,7 @@ class Mine:
     ) -> None:
         self._client = client
         self._session = token_hex()[:15]
-        self._channel = await self._client.fetch_channel(channel_id)
+        self._channel = self._client.get_channel(channel_id)
         if self._channel is None:
             raise NotFound('Unknown Channel')
 
