@@ -27,7 +27,7 @@ class Mine:
     async def get_user_data(self, user: discord.User) -> Optional[User]:
         _ch = bot.get_channel(channel_id)
         _mb = _ch.guild.get_member(bot_id)
-        if _mb.status != "offline"
+        if _mb.status != "offline":
             pass
         else:
             raise APIError("Mine Bot is offline")
