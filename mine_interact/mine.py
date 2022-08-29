@@ -25,7 +25,7 @@ class Mine:
         return m.author.id == bot_id and m.channel == self._channel
     
     async def get_user_data(self, user: discord.User) -> Optional[User]:
-        minebot = self._client.get_guild(channel_id.guild).get_member(bot_id)
+        minebot = self._client.get_guild(self._channel.guild).get_member(bot_id)
         if minebot.status != "offline":
             pass
         else:
