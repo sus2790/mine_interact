@@ -18,7 +18,7 @@ class Mine:
         self._client = client
         self._session = token_hex()[:15]
         self._channel = self._client.get_channel(channel_id)
-        self.guild = self._channel.guild
+        self._guild = self._channel.guild
         if self._channel is None:
             raise NotFound('Unknown Channel')
 
