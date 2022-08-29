@@ -1,4 +1,5 @@
-from typing import Optional
+from typing import (
+Optional
 import asyncio
 import discord
 from secrets import token_hex
@@ -14,11 +15,13 @@ bot_id = 955828209860112395
 class Mine:
     def __init__(
         self, client, channel_id: Optional[int]
-    ) -> None:
+    ) -> Any:  
         self._client = client
         self._session = token_hex()[:15]
         self._channel = self._client.get_channel(channel_id)
         self._guild = self._channel.guild
+        if isinstance(channel_id, int):
+            raise TypeError(f'channel_id parameter MUST be of type int, received {channel_id.__class__!r} instead')
         if self._channel is None:
             raise NotFound('Unknown Channel')
 
