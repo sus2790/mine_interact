@@ -14,7 +14,7 @@ bot_id = 955828209860112395
 class Mine:
     def __init__(
         self, client, channel_id: Optional[int]
-    ) -> Any:  
+    ) -> None:  
         self._client = client
         self._session = token_hex()[:15]
         self._channel = self._client.get_channel(channel_id)
