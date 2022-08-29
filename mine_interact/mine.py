@@ -31,7 +31,7 @@ class Mine:
         minebot = self._client.get_guild(self._guild.id).get_member(bot_id)
         if minebot.status == discord.Status.offline:
             raise APIError("Mine Bot is offline")
-        if not isinstance(user, int)
+        if not isinstance(user, int):
             raise TypeError(f'user_id parameter MUST be of type int, received {user.__name__!r} instead')
         if user is None:
             raise NotFound('Unknown User')
