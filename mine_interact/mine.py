@@ -9,7 +9,7 @@ __all__ = (
     'Mine',
 )
 
-bot_id = 955828209860112395
+bot_id = 823122263552425984
 
 class Mine:
     def __init__(
