@@ -15,7 +15,7 @@ class Mine:
     def __init__(
         self, client, channel_id: Optional[int]
     ) -> None:  
-        self._client = client
+        self._client = client   
         self._session = token_hex()[:15]
         self._channel = self._client.get_channel(channel_id)
         self._guild = self._channel.guild
@@ -31,7 +31,7 @@ class Mine:
             raise APIError("Mine Bot is offline")
         if user is None:
             raise NotFound('Unknown User')
-        await self._channel.send(f'MI.get_user_data {user.id} {self._session}')
+        await self._channel.send(f'MI.get_user_data {user} {self._session}')
         try:
             res = await self._client.wait_for('message', check=self._check_message, timeout=15)  
         except asyncio.TimeoutError:
