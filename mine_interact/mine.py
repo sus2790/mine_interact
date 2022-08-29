@@ -39,7 +39,7 @@ class Mine:
         if not res.content.startswith('MI.user_data'):
             if not res.content:
               return APIError('Mine Bot returned invalid data')
-             raise APIError(res.content)
+            raise APIError(res.content)
         raw_data = res.content[13:]
         if raw_data == 'none':
             return None
