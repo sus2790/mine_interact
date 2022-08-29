@@ -27,9 +27,7 @@ class Mine:
     
     async def get_user_data(self, user: discord.User) -> Optional[User]:
         minebot = self._client.get_guild(self._guild.id).get_member(bot_id)
-        if minebot.status != "offline":
-            pass
-        else:
+        if minebot.status == discord.Status.offline:
             raise APIError("Mine Bot is offline")
         if user is None:
             raise NotFound('Unknown User')
@@ -39,10 +37,9 @@ class Mine:
         except asyncio.TimeoutError:
             raise APITimeout('Mine Bot did not respond')
         if not res.content.startswith('MI.user_data'):
-          if not res.content:
-            return APIError('Mine Bot returned invalid data')
-          else:
-            raise APIError(res.content)
+            if not res.content:
+              return APIError('Mine Bot returned invalid data')
+             raise APIError(res.content)
         raw_data = res.content[13:]
         if raw_data == 'none':
             return None
