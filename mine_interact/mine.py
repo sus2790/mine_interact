@@ -19,8 +19,8 @@ class Mine:
         self._session = token_hex()[:15]
         self._channel = self._client.get_channel(channel_id)
         self._guild = self._channel.guild
-        if isinstance(channel_id, int):
-            raise TypeError(f'channel_id parameter MUST be of type int, received {channel_id.__class__!r} instead')
+        if not isinstance(channel_id, int):
+            raise TypeError(f'channel_id parameter MUST be of type int, received {channel_id.__name__!r} instead')
         if self._channel is None:
             raise NotFound('Unknown Channel')
 
@@ -31,6 +31,8 @@ class Mine:
         minebot = self._client.get_guild(self._guild.id).get_member(bot_id)
         if minebot.status == discord.Status.offline:
             raise APIError("Mine Bot is offline")
+        if not isinstance(user, int)
+            raise TypeError(f'user_id parameter MUST be of type int, received {user.__name__!r} instead')
         if user is None:
             raise NotFound('Unknown User')
         await self._channel.send(f'MI.get_user_data {user.id} {self._session}')
