@@ -1,5 +1,4 @@
-from typing import (
-Optional
+from typing import Optional
 import asyncio
 import discord
 from secrets import token_hex
