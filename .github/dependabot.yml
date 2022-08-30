@@ -23,3 +23,13 @@ updates:
     commit-message:
       prefix: ":arrow_up:"
     open-pull-requests-limit: 50
+  
+  - package-ecosystem: "discord"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    allow:
+      - dependency-type: "all"
+    commit-message:
+      prefix: ":arrow_up:"
+    open-pull-requests-limit: 50
