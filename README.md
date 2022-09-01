@@ -1,17 +1,38 @@
-# Mine Interact Package
+# WARNING
+**永光 LmanTW**
 
-https://github.com/cutebear0123/mine_interact 的備份 + 重寫
+**Removed Mine Bot's Interact feature**
+it's read-only now
+# Mine Interact
+Mine Interact is a Python libary for Mine Bot Interact.
 
+## Installing
+**Python 3.8 or higher is required**
 
-## example
-```py
+To install the library without full voice support, you can just run the following command:
 
+```sh
+# Linux/macOS
+python3 -m pip install -U discord.py
+
+# Windows
+py -3 -m pip install -U discord.py
+```
+
+--------------
+## Quick Example
+```python
 import discord
 from discord.ext import commands
-
+# Working for discord.py & pycord
 from mine_interact import Mine
 
-bot = commands.Bot(commands.when_mentioned_or("!"), intents=discord.Intents.all())
+intents = discord.Intents.default()
+intents.members = True
+intents.message_content = True
+
+bot = commands.Bot(command_prefix=commands.when_mentioned_or("!"), intents=intents)
+
 
 @bot.event
 async def on_ready():
@@ -32,10 +53,11 @@ async def on_ready():
     print(d.mystery_stone)
     print(d.skill)
 
-bot.run('your token')
+bot.run('token')
+```
+--------------
+## Links
+- [Mine Bot Support](https://discord.gg/rYkDwMRhWv)
+- [Invite Mine Bot](https://discord.com/oauth2/authorize?client_id=955828209860112395&permissions=8&scope=bot)
 
-```
-## install
-```sh
-pip install git+https://github.com/cutebear0123/mine_interact.git
-```
+You can ask **ANY** Mine Interact question in this server
