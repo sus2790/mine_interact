@@ -55,6 +55,7 @@ async def on_ready():
 
 bot.run('token')
 ```
+You can find more examples in the examples directory.
 --------------
 ## Links
 - [Mine Bot Support](https://discord.gg/rYkDwMRhWv)
