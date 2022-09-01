@@ -27,6 +27,8 @@ class Mine:
     
     async def get_user_data(self, user: discord.User) -> Optional[User]:
         minebot = self._client.get_guild(self._guild.id).get_member(bot_id)
+        if minebot is None:
+            raise NotFound('The Mine Bot was not found in this server')
         if minebot.status == discord.Status.offline:
             raise APIError("Mine Bot is offline")
         if user is None:
