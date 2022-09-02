@@ -32,7 +32,8 @@ intents.members = True
 intents.message_content = True
 
 bot = commands.Bot(command_prefix=commands.when_mentioned_or("!"), intents=intents)
-
+channel_id = 123456789 #change it to your channel id
+user_id = 123456789 #change it too!
 
 @bot.event
 async def on_ready():
