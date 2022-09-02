@@ -12,7 +12,10 @@ Mine Interact is a Python libary for Mine Bot Interact.
 To install the library without full voice support, you can just run the following command:
 
 ```sh
-pip install -U git+https://github.com/sus2790/mine_interact/
+# Linux/macOS
+python3 -m pip install git+https://github.com/sus2790/mine_interact/
+# Windows
+py -3 -m pip install git+https://github.com/sus2790/mine_interact/
 ```
 
 --------------
