@@ -13,7 +13,7 @@ bot_id = 823122263552425984
 
 class Mine:
     def __init__(
-        self, client, channel_id: Optional[int]
+        self, client, channel_id: int
     ) -> None:  
         self._client = client   
         self._session = token_hex()[:15]
@@ -25,7 +25,7 @@ class Mine:
     def _check_message(self, m):
         return m.author.id == bot_id and m.channel == self._channel
     
-    async def get_user_data(self, user: discord.User) -> Optional[User]:
+    async def get_user_data(self, user: discord.User) -> None:
         minebot = self._client.get_guild(self._guild.id).get_member(bot_id)
         if minebot is None:
             raise NotFound('The Mine Bot was not found in this server')
